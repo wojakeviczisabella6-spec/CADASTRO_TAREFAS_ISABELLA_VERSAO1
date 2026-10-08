@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -9,22 +9,35 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
 </head>
 
 <body>
 
-    <div class="cartao-aplicacao">
+    <main class="cartao-aplicacao">
+
+        <div class="detalhe-topo"></div>
 
         <header class="cabecalho-aplicacao">
-            <h1>Minhas Tarefas</h1>
+            <div>
+                <h1>Minhas Tarefas</h1>
+                <p>Organize seu dia ✨</p>
+            </div>
 
-            <button id="botao-modo-escuro" class="botao-principal">
+            <button
+                id="botao-modo-escuro"
+                class="botao-icon"
+                type="button"
+                aria-label="Alternar modo escuro"
+            >
                 <i class="fa-solid fa-moon"></i>
             </button>
         </header>
 
+        <!-- CADASTRO -->
         <div class="caixa-entrada">
 
             <input
@@ -32,28 +45,79 @@
                 id="campo-tarefa"
                 placeholder="O que vamos fazer hoje?..."
                 maxlength="40"
+                autocomplete="off"
             >
 
-            <button id="botao-adicionar" class="botao-principal">
+            <button
+                id="botao-adicionar"
+                class="botao-principal"
+                type="button"
+            >
                 <i class="fa-solid fa-plus"></i>
                 Adicionar
             </button>
 
         </div>
 
-        <ul id="lista-tarefas" class="lista-tarefas">
-            <!-- As tarefas serão inseridas aqui pelo JavaScript -->
-        </ul>
+        <!-- FILTROS -->
+        <div class="filtros">
 
+            <button class="filtro ativo" data-filtro="todas">
+                Todas
+            </button>
+
+            <button class="filtro" data-filtro="pendentes">
+                Pendentes
+            </button>
+
+            <button class="filtro" data-filtro="concluidas">
+                Concluídas
+            </button>
+
+        </div>
+
+        <!-- MENSAGEM QUANDO NÃO HÁ TAREFAS -->
+        <div id="mensagem-vazia" class="mensagem-vazia">
+            <i class="fa-solid fa-clipboard-check"></i>
+
+            <h2>Tudo pronto! ✨</h2>
+
+            <p>
+                Adicione uma nova tarefa para começar.
+            </p>
+        </div>
+
+        <!-- LISTA -->
+        <ul id="lista-tarefas" class="lista-tarefas"></ul>
+
+        <!-- FOTO -->
+        <div class="autoria">
+
+            <img
+                src="isazx.jpg"
+                alt="Foto de Isabella"
+                class="foto-isabella"
+            >
+
+            <p>
+                Criado por <strong>Isabella</strong>
+            </p>
+
+        </div>
+
+        <!-- RODAPÉ -->
         <footer class="rodape-aplicacao">
+
             <span id="contador-tarefas">
-                0 tarefas na lista
+                0 tarefas
             </span>
+
         </footer>
 
-    </div>
+    </main>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
